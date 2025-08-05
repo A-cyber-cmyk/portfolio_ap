@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 # --- PAGE CONFIG ---
@@ -40,16 +39,6 @@ st.markdown("""
             border-radius: 12px;
             margin-bottom: 1rem;
             border: 1px solid rgba(255,255,255,0.2);
-        }
-        .download-btn {
-            background-color: #0A66C2;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            margin-top: 2rem;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -106,7 +95,12 @@ for cert in cert_list:
 # --- DOWNLOAD RESUME BUTTON ---
 with open("aravind_resume.pdf", "rb") as pdf_file:
     PDFbyte = pdf_file.read()
-    st.download_button(label="📄 Download My Resume", data=PDFbyte, file_name="Aravind_Reddy_Gaddam_Resume.pdf", mime='application/pdf')
+st.download_button(
+    label="📄 Download My Resume",
+    data=PDFbyte,
+    file_name="Aravind_Reddy_Gaddam_Resume.pdf",
+    mime="application/pdf"
+)
 
 # --- CONTACT ---
 st.markdown("---")
